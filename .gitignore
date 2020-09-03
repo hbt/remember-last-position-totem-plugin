@@ -96,3 +96,5 @@ ENV/
 
 # The plugin data file
 *.pydata
+remember-last-position.pydata.json
+remember-last-position.conf

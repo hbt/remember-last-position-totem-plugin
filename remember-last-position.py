@@ -14,6 +14,7 @@ from ast import literal_eval
 from pprint import pprint
 from collections import OrderedDict
 from threading import Timer, Thread
+import json
 
 
 def normalize_path(path):
@@ -256,3 +257,7 @@ class RememberLastPositionPlugin(GObject.Object, Peas.Activatable):
         list_data_queue = list(self.data_queue.items())
         with open(self.data_path, 'w+') as f:
             pprint(list_data_queue, f)
+
+        f = open(self.data_path + ".json", "w")
+        f.write(json.dumps(list_data_queue))
+        f.close()
